@@ -17,6 +17,7 @@ os.environ['HUGGINGFACE_API_KEY'] = os.getenv('HUGGINGFACE_API_KEY')
 pubmed = PubMed(tool="haystack-ai2.0.0b4", email="dummyemail@gmail.com")
 
 def documentize(article):
+  # Wrap this in a Haystack custom component to format the results as Documents so that Haystack can use them
   return Document(content=article.abstract, meta={'title': article.title, 'keywords': article.keywords})
 
 @component
@@ -28,14 +29,17 @@ class PubMedFetcher():
 
     articles = []
     try:
-      for query in cleaned_queries:
-        response = pubmed.query(query, max_results = 1)
+      # Keywords of the query
+      for query in cleaned_queries: 
+        # Searching for articles with every keyword on PubMed
+        response = pubmed.query(query, max_results = 1) 
         documents = [documentize(article) for article in response]
         articles.extend(documents)
     except Exception as e:
         print(e)
         print(f"Couldn't fetch articles for queries: {queries}" )
     results = {'articles': articles}
+    # Sending results to the prompt_builder
     return results
 
 keyword_llm = HuggingFaceTGIGenerator("mistralai/Mistral-7B-v0.1")
