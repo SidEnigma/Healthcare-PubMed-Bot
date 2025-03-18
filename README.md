@@ -27,10 +27,10 @@ The chatbot workflow is illustrated in the pipeline diagram below:
 ![HealthcareChatbotArchitecture](https://github.com/SidEnigma/Healthcare-PubMed-Bot/assets/19359983/d7e86d63-7261-4e1a-ab89-ec97a21bf6b8)
 
 ## Features
-✅ **Natural Language Query Support** – No need for complex search strings.
-✅ **Real-Time PubMed Search** – Retrieves the latest research articles dynamically.
-✅ **Evidence-Based Responses** – Ensures information accuracy and reliability.
-✅ **User-Friendly Interface** – Powered by Gradio, making it accessible to non-experts.
+- ✅ **Natural Language Query Support** – No need for complex search strings.
+- ✅ **Real-Time PubMed Search** – Retrieves the latest research articles dynamically.
+- ✅ **Evidence-Based Responses** – Ensures information accuracy and reliability.
+- ✅ **User-Friendly Interface** – Powered by Gradio, making it accessible to non-experts.
 
 ## Installation & Usage
 
