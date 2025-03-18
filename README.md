@@ -6,9 +6,9 @@ This AI-powered assistant leverages a **Large Language Model (LLM)** and integra
 The PubMed Healthcare Chatbot simplifies and accelerates the process of retrieving medical literature from PubMed. Advanced Natural Language Processing (NLP) allows users to ask complex healthcare questions in plain language and receive precise, evidence-based responses sourced directly from PubMed’s vast repository.
 
 ### Why This Chatbot?
-🏥 **For Healthcare Professionals** – Quickly access the latest treatment protocols and medical advancements.
-🔬 **For Researchers** – Retrieve clinical trials, case studies, and systematic reviews efficiently.
-👨‍⚕️ **For Patients** – Get reliable and up-to-date health information to understand conditions, treatments, and medications.
+- 🏥 **For Healthcare Professionals** – Quickly access the latest treatment protocols and medical advancements.
+- 🔬 **For Researchers** – Retrieve clinical trials, case studies, and systematic reviews efficiently.
+- 👨‍⚕️ **For Patients** – Get reliable and up-to-date health information to understand conditions, treatments, and medications.
 
 ## Preview
 ![UI screenshot](https://github.com/SidEnigma/Healthcare-PubMed-Bot/assets/19359983/94cf7193-e84e-4bbe-9662-57f4135f17d1)
@@ -26,7 +26,7 @@ The chatbot workflow is illustrated in the pipeline diagram below:
 
 ![HealthcareChatbotArchitecture](https://github.com/SidEnigma/Healthcare-PubMed-Bot/assets/19359983/d7e86d63-7261-4e1a-ab89-ec97a21bf6b8)
 
-##Features
+## Features
 ✅ **Natural Language Query Support** – No need for complex search strings.
 ✅ **Real-Time PubMed Search** – Retrieves the latest research articles dynamically.
 ✅ **Evidence-Based Responses** – Ensures information accuracy and reliability.
