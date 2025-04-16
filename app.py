@@ -89,16 +89,15 @@ pipe.add_component("keyword_llm", keyword_llm)
 pipe.add_component("llm", llm)
 pipe.add_component("pubmed_fetcher", fetcher)
 
-pipe.connect("keyword_prompt_builder.prompt", "keyword_llm.prompt")
-pipe.connect("keyword_llm.replies", "pubmed_fetcher.queries")
-
-pipe.connect("pubmed_fetcher.articles", "prompt_builder.articles")
-pipe.connect("prompt_builder.prompt", "llm.prompt")
+pipe.connect("keyword_prompt_builder.prompt", "keyword_llm.prompt")   # keyword_prompt gives keywords to keyword_llm 
+pipe.connect("keyword_llm.replies", "pubmed_fetcher.queries")         # keyword_llm gives keywords to pubmed_fetcher
+pipe.connect("pubmed_fetcher.articles", "prompt_builder.articles")    # pubmed_fetcher gives articles to prompt_builder
+pipe.connect("prompt_builder.prompt", "llm.prompt")                   # prompt_builder gives prompt to llm 
 
 def ask(question):
   output = pipe.run(data={"keyword_prompt_builder":{"question":question},
                           "prompt_builder":{"question": question},
-                          "llm":{"generation_kwargs": {"max_new_tokens": 500}}})
+                          "llm":{"generation_kwargs": {"max_new_tokens": 500}}}) # llm gives response based on articles from PubMed and exisiting knowledge base
   
   response = output['llm']['replies'][0]  
   last_full_stop = response.rfind('.')
